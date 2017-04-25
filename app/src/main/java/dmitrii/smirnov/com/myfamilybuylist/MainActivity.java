@@ -181,7 +181,7 @@ public class MainActivity extends BaseActivity {
                         currentUserFriends.clear();
                         for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                             Events event = childSnapshot.getValue(Events.class);
-                            makeShortToast("event: " + event.getMessage());
+//                            makeShortToast("event: " + event.getMessage());
                             if (event.isSolved() && event.getTypeOfEvent() == Events.FRIEND_INVITE) {
                                 currentUserFriends
                                         .add(allUsers.get(event.getFromUserId()));

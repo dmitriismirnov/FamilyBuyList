@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Мой Список Покупок</string>
+    <string name="auth_failed">Возникла ошибка авторизации</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="e_mail">E-mail</string>
+    <string name="edit">Изменить</string>
+    <string name="edit_or_remove">Желаете изменить или удалить данную покупку?</string>
+    <string name="sure">Вы уверены?</string>
+    <string name="sign_in">Войти</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="remove">Удалить</string>
+    <string name="password">Пароль</string>
+    <string name="login_explain">Пожалуйста войдите или зарегистрируйтесь, чтобы поделиться списком покупок с близкими</string>
+    <string name="loading">Загрузка</string>
+    <string name="invalid_password">Пароль должен содержать минимум 5 символов</string>
+    <string name="invalid_email">Некорректный адрес электронной почты</string>
+    <string name="enter_your_password_here">Введите пароль</string>
+    <string name="enter_your_e_mail_here">Введите адрес электронной почты</string>
+    <string name="edit_position">Введите новое наименование</string>
+    <string name="enter_name_of_purchase">Введите наименование покупки</string>
+    <string name="invalid_name">Необходимо ввести наименование покупки</string>
+    <string name="profile">Мой Профиль</string>
+    <string name="add_purchase">Добавить покупку</string>
+    <string name="erase_list_question">Желаете удалить все купленные позиции?</string>
+    <string name="nothing_to_remove">Нечего удалять</string>
+    <string name="enter_friends_email">Введите email друга</string>
+    <string name="msg_friend_invite">Вы получили приглашение в друзья!</string>
+    <string name="refuse">Отказать</string>
+    <string name="user_not_found">Пользователь не найден</string>
+</resources>

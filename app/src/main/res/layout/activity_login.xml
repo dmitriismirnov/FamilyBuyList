@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dmitrii.smirnov.com.myfamilybuylist.LoginActivity">
+    <ImageView
+        android:id="@+id/login_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_image"
+        app:layout_heightPercent="25%"
+        app:layout_widthPercent="100%"
+        />
+
+    <TextView
+        android:id="@+id/login_tv_explain"
+        style="@style/AppTheme.Explain"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_image"
+        android:text="@string/login_explain"
+        app:layout_marginLeftPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <TextView
+        android:layout_marginTop="@dimen/margin_top_bigger"
+        android:id="@+id/login_tv_email"
+        android:layout_below="@id/login_tv_explain"
+        android:gravity="bottom"
+        android:paddingLeft="3dp"
+        android:text="@string/e_mail"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <EditText
+        android:id="@+id/login_et_email"
+        android:layout_below="@id/login_tv_email"
+        android:hint="@string/enter_your_e_mail_here"
+        android:inputType="textEmailAddress"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <TextView
+        android:id="@+id/login_tv_password"
+        android:layout_below="@id/login_et_email"
+        android:gravity="bottom"
+        android:paddingLeft="3dp"
+        android:text="@string/password"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <EditText
+        android:id="@+id/login_et_password"
+        android:layout_below="@id/login_tv_password"
+        android:hint="@string/enter_your_password_here"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="15%"
+        app:layout_widthPercent="70%" />
+
+    <Button
+        android:id="@+id/login_btn_signin"
+        android:layout_below="@id/login_et_password"
+        android:text="@string/sign_in"
+        app:layout_heightPercent="10%"
+        app:layout_marginLeftPercent="15%"
+        app:layout_marginTopPercent="5%"
+        app:layout_widthPercent="30%" />
+
+    <Button
+        android:id="@+id/login_btn_register"
+        style="@style/ButtonTheme.Accent"
+        android:layout_below="@id/login_et_password"
+        android:layout_toRightOf="@id/login_btn_signin"
+        android:text="@string/register"
+        app:layout_heightPercent="10%"
+        app:layout_marginLeftPercent="10%"
+        app:layout_marginTopPercent="5%"
+        app:layout_widthPercent="30%" />
+
+</android.support.percent.PercentRelativeLayout>

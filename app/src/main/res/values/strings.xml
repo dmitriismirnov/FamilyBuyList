@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">FamilyBuyList</string>
+    <string name="loading">Loading</string>
+    <string name="e_mail">E-mail</string>
+    <string name="enter_your_e_mail_here">Enter your e-mail here</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password_here">Enter your password here</string>
+    <string name="login_explain">Please sign in or register to share your buy list with friends</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="invalid_email">Invalid E-mail</string>
+    <string name="invalid_password">Password is too short: minimum 5 symbols</string>
+    <string name="auth_failed">Authorization failed</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="edit_or_remove">Do you wish to edit or remove this purchase?</string>
+    <string name="edit_position">Enter new name of position</string>
+    <string name="sure">Are you sure?</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_name_of_purchase">Enter name of purchase</string>
+    <string name="invalid_name">You should enter name of purchase</string>
+    <string name="profile">My Profile</string>
+    <string name="add_purchase">Add purchase</string>
+    <string name="erase_list_question">Want to delete all bought items?</string>
+    <string name="nothing_to_remove">There are no bought items to delete</string>
+    <string name="user_not_found">User not found</string>
+    <string name="enter_friends_email">Enter your friend\'s email</string>
+    <string name="msg_friend_invite">You have received a friend invite!</string>
+    <string name="refuse">Refuse</string>
+
+</resources>

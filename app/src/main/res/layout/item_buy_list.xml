@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <CheckBox
+        android:id="@+id/item_buy_list_checkbox"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/item_buy_list_textview"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="casual"
+        android:gravity="left"
+        android:text="кое что something"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+</LinearLayout>

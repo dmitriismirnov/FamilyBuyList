@@ -47,6 +47,18 @@ public class RecyclerClickListener implements RecyclerView.OnItemTouchListener {
         private RecyclerView mRecyclerView;
 
         @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+
+            if(distanceY > 0){
+                mListener.onScroll(true);
+            } else {
+                mListener.onScroll(false);
+            }
+
+            return true;
+        }
+
+        @Override
         public boolean onSingleTapUp(MotionEvent e) {
             View view = findView(e);
             if (validate(view)) {
@@ -92,6 +104,8 @@ public class RecyclerClickListener implements RecyclerView.OnItemTouchListener {
         public void onItemClick(View view, int position);
 
         public void onItemLongClick(View view, int position);
+
+        public void onScroll(boolean scrollDown);
     }
 
     public static class SimpleItemMotionEventListener implements OnItemMotionEventListener{
@@ -103,6 +117,11 @@ public class RecyclerClickListener implements RecyclerView.OnItemTouchListener {
 
         @Override
         public void onItemLongClick(View view, int position) {
+
+        }
+
+        @Override
+        public void onScroll(boolean scrollDown) {
 
         }
     }

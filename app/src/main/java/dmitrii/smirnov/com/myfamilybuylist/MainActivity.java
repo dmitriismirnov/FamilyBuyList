@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +11,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -105,6 +105,15 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemLongClick(View view, int position) {
                 buildEditOrRemoveDialog(position);
+            }
+
+            @Override
+            public void onScroll(boolean scrollDown) {
+                if (scrollDown) {
+                    hideFAB();
+                } else {
+                    showFAB();
+                }
             }
         }));
 
@@ -276,6 +285,27 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    private void showFAB() {
+        FloatingActionButton fabAdd = (FloatingActionButton) findViewById(R.id.fab_add_purchase);
+        FloatingActionButton fabErase = (FloatingActionButton) findViewById(R.id.fab_erase_list);
+        if (fabAdd.getVisibility()==View.GONE) {
+            fabAdd.setVisibility(View.VISIBLE);
+            fabErase.setVisibility(View.VISIBLE);
+            animateView(fabAdd, R.anim.enlarge);
+            animateView(fabErase, R.anim.enlarge);
+        }
+    }
+
+    private void hideFAB() {
+        FloatingActionButton fabAdd = (FloatingActionButton) findViewById(R.id.fab_add_purchase);
+        FloatingActionButton fabErase = (FloatingActionButton) findViewById(R.id.fab_erase_list);
+        if (fabAdd.getVisibility() == View.VISIBLE) {
+            animateView(fabAdd, R.anim.shrink);
+            animateView(fabErase, R.anim.shrink);
+            fabAdd.setVisibility(View.GONE);
+            fabErase.setVisibility(View.GONE);
+        }
+    }
 
     private void changePurchaseBought(int position) {
         Purchase.PURCHASE_LIST.get(position).setBought(
@@ -316,6 +346,7 @@ public class MainActivity extends BaseActivity {
                             Purchase purchase = new Purchase(s);
                             Purchase.PURCHASE_LIST.add(purchase);
                             FirebaseHelper.addPurchase(purchase);
+                            animateView(findViewById(R.id.fab_add_purchase), R.anim.rotate);
                             dataManager.notifyItemInserted(Purchase.PURCHASE_LIST.size());
                         }
                     }
@@ -463,7 +494,7 @@ public class MainActivity extends BaseActivity {
 
         builder
                 .setView(layout)
-                .setTitle("")
+                .setTitle(getString(R.string.remove))
                 .setIcon(R.drawable.ic_question_answer)
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
                     @Override
@@ -493,6 +524,7 @@ public class MainActivity extends BaseActivity {
 
         if (list.size() == 0) {
             makeShortToast(getString(R.string.nothing_to_remove));
+            animateView(findViewById(R.id.fab_erase_list), R.anim.shake);
         } else {
 
             for (int i = 0; i < list.size(); i++) {
@@ -501,6 +533,7 @@ public class MainActivity extends BaseActivity {
 
             Purchase.PURCHASE_LIST.removeAll(list);
 
+            animateView(findViewById(R.id.fab_erase_list), R.anim.rotate_back);
             dataManager.notifyDataSetChanged();
         }
     }
@@ -533,5 +566,8 @@ public class MainActivity extends BaseActivity {
         startActivity(i);
     }
 
+    void animateView(View view, int animationId) {
+        view.startAnimation(AnimationUtils.loadAnimation(this, animationId));
+    }
 
 }
